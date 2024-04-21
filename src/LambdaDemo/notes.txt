@@ -9,7 +9,7 @@
  aws lambda create-function-url-config --function-name LambdaDemo --auth-type NONE
  aws lambda add-permission --function-name LambdaDemo --statement-id AuthNone --action lambda:InvokeFunctionUrl --principal * --function-url-auth-type NONE
 
- curl --json  '{ "firstname": "Alan", "lastname":"Adams","age":"25" }' https://4b4lvv7gool73u4fnwlutnt6sm0ibfpe.lambda-url.eu-west-1.on.aws
+ curl --json  '{ "firstname": "Alan", "lastname":"Adams","age":"25" }' https://xxxxbda-url.eu-west-1.on.aws
 
 
  aws lambda delete-function --function-name LambdaDemo
