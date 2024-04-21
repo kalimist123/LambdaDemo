@@ -1,0 +1,17 @@
+﻿ 
+ 
+ https://nodogmablog.bryanhogan.net/2022/04/lambda-function-urls-triggering-net-6-lambda-functions-with-a-https-request/
+
+ 
+ dotnet lambda deploy-function LambdaDemo --function-role lambda-demo-role
+ aws lambda delete-function-url-config --function-name LambdaDemo
+
+ aws lambda create-function-url-config --function-name LambdaDemo --auth-type NONE
+ aws lambda add-permission --function-name LambdaDemo --statement-id AuthNone --action lambda:InvokeFunctionUrl --principal * --function-url-auth-type NONE
+
+ curl --json  '{ "firstname": "Alan", "lastname":"Adams","age":"25" }' https://4b4lvv7gool73u4fnwlutnt6sm0ibfpe.lambda-url.eu-west-1.on.aws
+
+
+ aws lambda delete-function --function-name LambdaDemo
+ aws lambda delete-function-url-config --function-name LambdaDemo
+
